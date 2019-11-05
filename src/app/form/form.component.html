@@ -1,0 +1,39 @@
+<div class="d-flex flex-column">
+  <div class="d-flex mb-3">
+    <label>
+      Nume:
+      <input type="text" [formControl]="name">
+    </label>
+  </div>
+  <div class="d-flex mb-3">
+    <label>
+      Prenume:
+      <input type="text" [formControl]="surname">
+    </label>
+  </div>
+  <div class="d-flex mb-3">
+    <label>
+      Suma imprumutata:
+      <input type="text" [formControl]="amount">
+    </label>
+  </div>
+  <div class="d-flex mb-3">
+    <label>
+      Dobanda:
+      <input type="text" [formControl]="fee">
+    </label>
+  </div>
+
+  <div class="d-flex mb-3">
+    <label>
+      Perioada:
+      <input type="text" [formControl]="period">
+    </label>
+  </div>
+</div>
+
+
+
+<button (click)="postPdfObject()">Post pdf</button>
+
+{{response}}
