@@ -1,4 +1,4 @@
-<div class="d-flex flex-column">
+<div class="d-flex flex-column align-items-center">
   <div class="d-flex mb-3">
     <label>
       Nume:
@@ -11,29 +11,29 @@
       <input type="text" [formControl]="surname">
     </label>
   </div>
-  <div class="d-flex mb-3">
+  <div class="d-flex mb-3 ">
     <label>
-      Suma imprumutata:
-      <input type="text" [formControl]="amount">
+      Salariu Brut:
+      <input type="text" [formControl]="salary">
     </label>
   </div>
   <div class="d-flex mb-3">
     <label>
-      Dobanda:
-      <input type="text" [formControl]="fee">
+      Taxe:
+      <input type="text" [formControl]="tax">
     </label>
   </div>
 
-  <div class="d-flex mb-3">
+  <div class="d-flex mb-3 d-flex justify-content-center">
     <label>
-      Perioada:
-      <input type="text" [formControl]="period">
+      Salarii extra:
+      <input type="text" [formControl]="extraSalary">
     </label>
+  </div>
+  <div>
+    <button class="d-flex" (click)="postPdfObject()">Post pdf</button>
   </div>
 </div>
 
-
-
-<button (click)="postPdfObject()">Post pdf</button>
 
 {{response}}
