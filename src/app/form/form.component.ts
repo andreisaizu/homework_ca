@@ -17,9 +17,11 @@ export class FormComponent implements OnInit {
   name = new FormControl('');
   surname = new FormControl('');
   amount = new FormControl('');
-  fee = new FormControl('');
-  period = new FormControl('');
+  salary = new FormControl('');
+  tax = new FormControl('');
+  extraSalary = new FormControl('');
   response:String;
+  taxError:String ="" ;
 
   ngOnInit() {
   }
@@ -28,12 +30,18 @@ export class FormComponent implements OnInit {
     this.pdfObject.id = uuid();
     this.pdfObject.name = this.name.value;
     this.pdfObject.surname = this.surname.value;
-    this.pdfObject.amount = this.amount.value;
-    this.pdfObject.fee = this.fee.value;
-    this.pdfObject.period = this.period.value;
-    this.pdfService.postPdf(this.pdfObject).subscribe( response => {
-      this.response = "PDF Printed";
-    });
+    this.pdfObject.salary = this.salary.value;
+    this.pdfObject.extraSalary = this.extraSalary.value;
+    if(this.tax.value>100){
+      this.taxError= "Valoarea taxelor nu poate fi mai mare de 100%";
+    }
+    else {
+      this.pdfObject.tax = this.tax.value;
+      this.pdfService.postPdf(this.pdfObject).subscribe( response => {
+        this.response = "Employee inserted.";
+      });
+    }
+    
   }
 
 }
