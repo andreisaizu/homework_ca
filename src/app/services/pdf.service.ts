@@ -11,7 +11,7 @@ export class PdfService {
     private apiService: ApiService
   ) {}
 
-  endpoint = '/uploadFile';
+  endpoint = '/generateChart';
 
   private formatErrors(error: any) {
     //return  throwError(error.error);
